@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "getmax.h": "c",
+        "Exercice1.C": "cpp"
+    }
+}
