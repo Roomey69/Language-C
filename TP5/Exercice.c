@@ -31,10 +31,10 @@ int NombreRationnel(){
     n2 = input("Entrez le numerateur du rationnel 2 : ");
     d2 = input("Entrez le denominateur du rationnel 2 : ");
     
-    a = multiplication(n1,n2)/pgcd(multiplication(n1,n2),multiplication(d1,d2));
-    b = multiplication(d1,d2)/pgcd(multiplication(n1,n2),multiplication(d1,d2));
-    c = addition(multiplication(n1,d2),multiplication(n2,d1))/pgcd(addition(multiplication(n1,d2),multiplication(n2,d1)),multiplication(d1,d2));
-    d = multiplication(d1,d2)/pgcd(addition(multiplication(n1,d2),multiplication(n2,d1)),multiplication(d1,d2));
+    a = multiplication(n1,n2)/pgcd(multiplication(n1,n2),multiplication(d1,d2)); // Numérateur mutiplication
+    b = multiplication(d1,d2)/pgcd(multiplication(n1,n2),multiplication(d1,d2)); // Dénominateur multiplication
+    c = addition(multiplication(n1,d2),multiplication(n2,d1))/pgcd(addition(multiplication(n1,d2),multiplication(n2,d1)),multiplication(d1,d2)); // Numérateur addition
+    d = multiplication(d1,d2)/pgcd(addition(multiplication(n1,d2),multiplication(n2,d1)),multiplication(d1,d2)); // Dénominateur addition
 
     if ( b == 1 ){
         printf("La mutiplication est egale a : %d\n",a);
@@ -52,7 +52,7 @@ int NombreRationnel(){
 
 int main(){
 
-    NombreRationnel(); 
+    NombreRationnel();
 
     return 0;
 }
