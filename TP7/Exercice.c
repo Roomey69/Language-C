@@ -1,11 +1,11 @@
 #include <stdio.h>
 
-int occurence(char phrase[],char c[]){
+int occurence(char phrase[],char c){
 
-    int occurence, i = 0;
+    int occurence=0, i = 0;
 
     while ( phrase[i] != '\0' ){
-        if ( phrase[i] == c[0] ){
+        if ( phrase[i] == c ){
             occurence++;
         }
         i++;
@@ -18,9 +18,9 @@ int main(){
     char phrase[100], caractere;
 
     printf("Entrez votre caractere : ");scanf("%c",&caractere);
-    printf("Entrez votre phrase : ");scanf("%[^\n]%*c", phrase);
+    printf("Entrez votre phrase : ");scanf("%s",phrase);
 
-    printf("%d",occurence(&phrase,&caractere));
+    printf("%d",occurence(phrase,caractere));
 
     return 0;
 }
