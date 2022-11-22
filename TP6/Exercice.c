@@ -20,7 +20,7 @@ int main(){
 
     init(&x,&y);
 
-    printf("%f\n%d", x,y);
-
+    printf("%f %d", x,y);
+    
     return 0;
 }
