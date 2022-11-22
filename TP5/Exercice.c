@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+struct rationnel
+{
+    int n,d;
+};
+
 int input(char phrase[]){
     int x;
     printf("%s",phrase);scanf("%d",&x);
@@ -23,18 +28,20 @@ int pgcd(int nbr1, int nbr2)
 }
 
 int NombreRationnel(){
-    
-    int n1,n2,d1,d2,a,b,c,d;
 
-    n1 = input("Entrez le numerateur du rationnel 1 : ");
-    d1 = input("Entrez le denominateur du rationnel 1 : ");
-    n2 = input("Entrez le numerateur du rationnel 2 : ");
-    d2 = input("Entrez le denominateur du rationnel 2 : ");
+    struct rationnel r1,r2;
+
+    int a,b,c,d;
+
+    r1.n = input("Entrez le numerateur du rationnel 1 : ");
+    r1.d = input("Entrez le denominateur du rationnel 1 : ");
+    r2.n = input("Entrez le numerateur du rationnel 2 : ");
+    r2.d = input("Entrez le denominateur du rationnel 2 : ");
     
-    a = multiplication(n1,n2)/pgcd(multiplication(n1,n2),multiplication(d1,d2)); // Numérateur mutiplication
-    b = multiplication(d1,d2)/pgcd(multiplication(n1,n2),multiplication(d1,d2)); // Dénominateur multiplication
-    c = addition(multiplication(n1,d2),multiplication(n2,d1))/pgcd(addition(multiplication(n1,d2),multiplication(n2,d1)),multiplication(d1,d2)); // Numérateur addition
-    d = multiplication(d1,d2)/pgcd(addition(multiplication(n1,d2),multiplication(n2,d1)),multiplication(d1,d2)); // Dénominateur addition
+    a = multiplication(r1.n,r2.n)/pgcd(multiplication(r1.n,r2.n),multiplication(r1.d,r2.d)); // Numérateur mutiplication
+    b = multiplication(r1.d,r2.d)/pgcd(multiplication(r1.n,r2.n),multiplication(r1.d,r2.d)); // Dénominateur multiplication
+    c = addition(multiplication(r1.n,r2.d),multiplication(r2.n,r1.d))/pgcd(addition(multiplication(r1.n,r2.d),multiplication(r2.n,r1.d)),multiplication(r1.d,r2.d)); // Numérateur addition
+    d = multiplication(r1.d,r2.d)/pgcd(addition(multiplication(r1.n,r2.d),multiplication(r2.n,r1.d)),multiplication(r1.d,r2.d)); // Dénominateur addition
 
     if ( b == 1 ){
         printf("La mutiplication est egale a : %d\n",a);
