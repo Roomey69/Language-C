@@ -8,7 +8,7 @@ int input(char phrase[]){
 
 void sum_product_tableau(int liste[]){
 
-    int i,sum=0,product=1,nb = 0;
+    int i,sum=0,product=1,nb = sizeof(liste)/4; // NB TAILLE LISTE
 
     while ( liste[i] ){
         nb++;i++;
@@ -28,9 +28,9 @@ void sum_product_tableau(int liste[]){
 
 int main(){
 
-    int len,i,tableau[len = input("Entrez la taille de la liste : ")];
+    int len = input("Entrez la taille de la liste : "),*tableau = malloc(sizeof(int)*len);
 
-    for( i=0 ; i<len ; i++ ){
+    for( int i=0 ; i<len ; i++ ){
         tableau[i] = input("Entrez votre entier : ");
     }
 
