@@ -13,16 +13,15 @@ int compare (const void * a, const void * b) {
 
 int tableau(){
 
-    int nb = input("Entrez la taille de la liste : "),i,max,list[nb];
+    int nb = input("Entrez la taille de la liste : "),i,list[nb];
 
     for( i=0 ; i<nb ;i++ ){
         list[i] = input("Entrez votre entier : ");
     }
 
     qsort(list, nb, sizeof(int), compare); 
-    max = list[nb-1];
 
-    return max;
+    return list[nb-1];
 }
 
 int main(){
