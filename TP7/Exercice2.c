@@ -10,7 +10,7 @@ int input(char phrase[]){
 
 void random(int n, int i){
     srand((unsigned int)time(NULL));
-    printf("%d", n + (rand() % i));
+    printf("%d", n + (rand() % i-n+1));
 }
 
 int main(){

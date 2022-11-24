@@ -10,7 +10,7 @@ int input(char phrase[]){
 
 void random(int n, int i,int *nb){
     srand((unsigned int)time(NULL));
-    *nb = n + (rand() % i);
+    *nb = n + (rand() % i-n+1);
 }
 
 int main(){
