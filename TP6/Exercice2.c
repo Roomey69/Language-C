@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+// FONCTIONNEL
+
 int input(char phrase[]){
     int x;
     printf("%s",phrase);scanf("%d",&x);

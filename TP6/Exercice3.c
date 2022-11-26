@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+// FONCTIONNEL
+
 int input(char phrase[]){
     int x;
     printf("%s",phrase);scanf("%d",&x);
@@ -13,14 +15,6 @@ void change_var(int *a,int *b){
     temp = *a;
     *a = *b;
     *b = temp;
-
-}
-
-void change_var2(int a, int b){
-
-    a = a - b;
-    b = a + b;
-    a = b - a;
 
 }
 

@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
+// FONCTIONNEL
+
 int main(){
     
     int num;

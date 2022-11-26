@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+// FONCTIONNEL
+
 int input(char phrase[]){
     int x;
     printf("%s",phrase);scanf("%d",&x);
@@ -8,20 +10,21 @@ int input(char phrase[]){
 
 void bidimensional(){
 
-    int n,i, list[3][4];
+    int list[3][4];
 
-    for ( i=0 ; i<3 ; i++ ){       
-        for ( n=0 ; n<4 ; n++){        
+    for ( int i=0 ; i<3 ; i++ ){
+        printf("\n| %de ligne |\n\n",i+1);      
+        for ( int n=0 ; n<4 ; n++){        
             list[i][n] = input("Entrez votre entier : ");
         }        
     }
     
-    for ( i=0 ; i<3 ; i++ ){
+    for ( int i=0 ; i<3 ; i++ ){
         printf("\n| ");
-        for ( n=0 ; n<4 ; n++ ){
+        for ( int n=0 ; n<4 ; n++ ){
             printf("%d | ",list[i][n]);
         }  
-    }   
+    }printf("\n");
 }   
 
 int main(){

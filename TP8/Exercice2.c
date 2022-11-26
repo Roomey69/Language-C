@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// FONCTIONNEL MAIS N'INITIALISE PAS TAB DONC REVOIR
+
 int input(char phrase[]){
     int x;
     printf("%s",phrase);scanf("%d",&x);

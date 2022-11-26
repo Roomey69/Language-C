@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+// FONCTIONNEL
+
 struct rationnel
 {
     int n,d;

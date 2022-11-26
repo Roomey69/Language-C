@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+// FONCTIONNEL
+
 int main() {
 
     int t0, ti=6, p0;

@@ -1,8 +1,8 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.h> 
 #include <time.h>
 
-// REVOIR LES PARAMETRES DES FONCTIONS AFFICHAGE ET RANDOM_MATRIX
+// FONCTIONNEL MAIS REVOIR LES PARAMETRES DES FONCTIONS AFFICHAGE | RANDOM_MATRIX | SORT_MATRIX
 
 typedef int **matrix;
 
@@ -14,38 +14,50 @@ int input(char phrase[])
     return x;
 }
 
+int compare (const void * a, const void * b) {
+   return ( *(int*)a - *(int*)b );
+}
+
 void free_tab(int len_l, matrix tab[])
 {
 
-    for (int i = 0; i < len_l; i++)
-    {
+    for ( int i=0 ; i<len_l ; i++ )
         free((*tab)[i]);
-    }
     free(*tab);
 }
 
-void random_matrix(int len_l, int len_c, int tab[][len_c])
-{
+void sort_matrix(int len_l, int len_c, int tab[len_l][len_c]){
 
+    int temp[len_l*len_c],k=0;
     for (int i = 0; i < len_l; i++)
-    {
         for (int j = 0; j < len_c; j++)
-        {
-            tab[i][j] = rand() % 256;
-        }
-    }
+            temp[k++] = tab[i][j];
+
+    qsort( temp, len_l*len_c, sizeof(int), compare );
+
+    k = 0;
+    for ( int i=0 ; i<len_l ; i++ )
+       for ( int j=0 ; j<len_c ; j++ )
+           tab[i][j] = temp[k++];
+
+
 }
 
-void affichage(int len_l, int len_c, int tab[][len_c])
+void random_matrix(int len_l, int len_c, int tab[len_l][len_c])
 {
 
-    for (int i = 0; i < len_l; i++)
-    {
+    for ( int i=0 ; i<len_l ; i++ )
+        for ( int j=0 ; j<len_c ; j++ )
+            tab[i][j] = rand() % 256;
+}
+
+void affichage(int len_l, int len_c, int tab[len_l][len_c])
+{
+
+    for ( int i=0 ; i<len_l ; i++ ){
         printf("\n");
-        for (int j = 0; j < len_c; j++)
-        {
+        for ( int j=0 ; j<len_c ; j++)
             printf("[%d]", tab[i][j]);
-        }
     }
     printf("\n\n");
 
@@ -55,10 +67,9 @@ void init_matrix(int len_l, int len_c, matrix tab[])
 {
 
     *tab = calloc(len_l, sizeof(int *) * len_l);
-    for (int i = 0; i < len_l; i++)
-    {
+    for ( int i=0 ; i<len_l ; i++ )
         (*tab)[i] = calloc(len_c, sizeof(int) * len_c);
-    }
+
 }
 
 int main()
@@ -71,7 +82,8 @@ int main()
     int len_c = input("Entrez le nombre de colonne de la liste : ");
 
     init_matrix(len_l, len_c, &tab);
-    random_matrix(len_l, len_c, &tab[len_l][len_c]);
+    random_matrix(len_l, len_c, tab);
+    sort_matrix(len_l, len_c, tab);
     affichage(len_l, len_c, tab);
 
     free_tab(len_l, &tab);

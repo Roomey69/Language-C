@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <D:\ING1\Language C\TP4\getmax.h>
 
+// FONCTIONNEL
+
 int input(char phrase[]){
     int x;
     printf("%s",phrase);scanf("%d",&x);

@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+// FONCTIONNEL AVEC UN MOT ; VOIR POUR SCANF LES ESPACES
+
 int occurence(char phrase[],char c){
 
     int occurence=0, i = 0;

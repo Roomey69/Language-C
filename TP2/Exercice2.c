@@ -1,4 +1,7 @@
 #include <stdio.h>
+
+// FONCTIONNEL
+
 int main(){
     
     int maVar1 = 3;
