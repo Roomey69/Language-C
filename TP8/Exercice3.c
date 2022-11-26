@@ -18,7 +18,7 @@ int compare (const void * a, const void * b) {
    return ( *(int*)a - *(int*)b );
 }
 
-void free_tab(int len_l, matrix tab[])
+void free_matrix(int len_l, matrix tab[])
 {
     for ( int i=0 ; i<len_l ; i++ )
         free((*tab)[i]);
@@ -78,6 +78,6 @@ int main()
     sort_matrix(len_l, len_c, tab);
     affichage(len_l, len_c, tab);
 
-    free_tab(len_l, &tab);
+    free_matrix(len_l, &tab);
     return 0;
 }
