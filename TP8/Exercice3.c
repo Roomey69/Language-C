@@ -20,7 +20,6 @@ int compare (const void * a, const void * b) {
 
 void free_tab(int len_l, matrix tab[])
 {
-
     for ( int i=0 ; i<len_l ; i++ )
         free((*tab)[i]);
     free(*tab);
@@ -40,12 +39,10 @@ void sort_matrix(int len_l, int len_c, int tab[len_l][len_c]){
        for ( int j=0 ; j<len_c ; j++ )
            tab[i][j] = temp[k++];
 
-
 }
 
 void random_matrix(int len_l, int len_c, int tab[len_l][len_c])
 {
-
     for ( int i=0 ; i<len_l ; i++ )
         for ( int j=0 ; j<len_c ; j++ )
             tab[i][j] = rand() % 256;
@@ -53,28 +50,23 @@ void random_matrix(int len_l, int len_c, int tab[len_l][len_c])
 
 void affichage(int len_l, int len_c, int tab[len_l][len_c])
 {
-
     for ( int i=0 ; i<len_l ; i++ ){
         printf("\n");
         for ( int j=0 ; j<len_c ; j++)
             printf("[%d]", tab[i][j]);
     }
     printf("\n\n");
-
 }
 
 void init_matrix(int len_l, int len_c, matrix tab[])
 {
-
     *tab = calloc(len_l, sizeof(int *) * len_l);
     for ( int i=0 ; i<len_l ; i++ )
         (*tab)[i] = calloc(len_c, sizeof(int) * len_c);
-
 }
 
 int main()
 {
-
     srand(time(NULL));
 
     matrix tab;
