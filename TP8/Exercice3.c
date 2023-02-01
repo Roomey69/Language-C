@@ -4,7 +4,7 @@
 
 // FONCTIONNEL MAIS REVOIR LES PARAMETRES DES FONCTIONS AFFICHAGE | RANDOM_MATRIX | SORT_MATRIX
 
-typedef int **matrix;
+typedef int** matrix;
 
 int input(char phrase[])
 {
@@ -18,14 +18,15 @@ int compare (const void * a, const void * b) {
    return ( *(int*)a - *(int*)b );
 }
 
-void free_matrix(int len_l, matrix tab[])
+void free_matrix(int len_l, int*** tab)
 {
     for ( int i=0 ; i<len_l ; i++ )
         free((*tab)[i]);
     free(*tab);
+    *tab = NULL;
 }
 
-void sort_matrix(int len_l, int len_c, int tab[len_l][len_c]){
+void sort_matrix(int len_l, int len_c, int** tab){
 
     int temp[len_l*len_c],k=0;
     for (int i = 0; i < len_l; i++)
@@ -41,14 +42,14 @@ void sort_matrix(int len_l, int len_c, int tab[len_l][len_c]){
 
 }
 
-void random_matrix(int len_l, int len_c, int tab[len_l][len_c])
+void random_matrix(int len_l, int len_c, int** tab)
 {
     for ( int i=0 ; i<len_l ; i++ )
         for ( int j=0 ; j<len_c ; j++ )
             tab[i][j] = rand() % 256;
 }
 
-void affichage(int len_l, int len_c, int tab[len_l][len_c])
+void affichage(int len_l, int len_c, int** tab)
 {
     for ( int i=0 ; i<len_l ; i++ ){
         printf("\n");
@@ -58,7 +59,7 @@ void affichage(int len_l, int len_c, int tab[len_l][len_c])
     printf("\n\n");
 }
 
-void init_matrix(int len_l, int len_c, matrix tab[])
+void init_matrix(int len_l, int len_c, int*** tab)
 {
     *tab = calloc(len_l, sizeof(int *) * len_l);
     for ( int i=0 ; i<len_l ; i++ )
@@ -69,7 +70,7 @@ int main()
 {
     srand(time(NULL));
 
-    matrix tab;
+    int** tab;
     int len_l = input("Entrez le nombre de ligne de la liste : ");
     int len_c = input("Entrez le nombre de colonne de la liste : ");
 
