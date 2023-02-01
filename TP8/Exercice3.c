@@ -4,8 +4,6 @@
 
 // FONCTIONNEL
 
-typedef int** matrix;
-
 int input(char phrase[])
 {
     int x;
