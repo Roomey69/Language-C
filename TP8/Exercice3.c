@@ -2,7 +2,7 @@
 #include <stdlib.h> 
 #include <time.h>
 
-// FONCTIONNEL MAIS REVOIR LES PARAMETRES DES FONCTIONS AFFICHAGE | RANDOM_MATRIX | SORT_MATRIX
+// FONCTIONNEL
 
 typedef int** matrix;
 
