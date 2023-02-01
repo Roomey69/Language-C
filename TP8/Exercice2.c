@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// FONCTIONNEL MAIS N'INITIALISE PAS TAB DONC REVOIR
+// FONCTIONNEL
 
 int input(char phrase[]){
     int x;
@@ -9,24 +9,30 @@ int input(char phrase[]){
     return x;
 }
 
-float average(int tab[]){
+float average(int *tab, int *len){
 
-    int average=0 , len = input("Entrez la taille de la liste : ");
-    tab = calloc(len,sizeof(int)*len);
+    int average=0;
+    *len = input("Entrez la taille de la liste : ");
+    *tab = (int)calloc(*len, *len*sizeof(int) );
 
-    for ( int i=0 ; i<len ; i++ ){
+    for ( int i=0 ; i<*len ; i++ ){
         tab[i] = input("Entrez votre entier : ");
         average += tab[i];
     }
-    free(tab);
 
-    return (float)average/(float)len;
+    return (float)average/(float)*len;
 }
 
 int main(){
     
-    int tab;
-    printf("%f",average(&tab));
+    int *tab, len = 0;
+    printf("%f\n",average(tab,&len));
+
+    for(int i=0 ; i<len ; i++){
+        printf("[%d]",tab[i]);
+    }
+
+    free(tab);
 
     return 0;
 }
