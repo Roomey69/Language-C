@@ -50,10 +50,10 @@ void exo13(){
 
 void exo14(){
 
-    int res=1,i=1,n=0;
+    int res=1,n=0;
 
     printf("Entrez un nombre entier : ");scanf("%d",&n);
-    for(i;i<=5;i++){
+    for(int i=1;i<=5;i++){
         res*=n;
     }
     printf("Le nombre a la puissance 5 est : %d", res);
