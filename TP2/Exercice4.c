@@ -28,7 +28,7 @@ void exo12(){
     int nb,p=1;
 
     printf("Entrez un nombre entier : ");scanf("%d",&nb);
-    for(int i=0;i<nb;i++){
+    for( int i=0 ; i<nb ; i++ ){
         printf("%d\n",p);
         p+=2;
     }
@@ -41,7 +41,7 @@ void exo13(){
     int nb,i=1;
 
     printf("Entrez un nombre entier : ");scanf("%d",&nb);
-    while( i <= nb ){
+    while(  i <= nb ){
         printf("%d\n",i);
         i+=2;
     }
@@ -53,7 +53,7 @@ void exo14(){
     int res=1,n=0;
 
     printf("Entrez un nombre entier : ");scanf("%d",&n);
-    for(int i=1;i<=5;i++){
+    for( int i=1 ; i<=5 ; i++ ){
         res*=n;
     }
     printf("Le nombre a la puissance 5 est : %d", res);
