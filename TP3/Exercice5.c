@@ -10,7 +10,7 @@ int main(){
 
     printf("Entrez le numero de la boisson : ");scanf("%d",&num);
     if( num <= 0 || num > 11 || strcmp(distributeur[num-1],"") == 0 ){
-        printf("T'es louche ou koi ? Mauvais numero de boisson...");
+        printf("Mauvais numero de boisson...");
     }else{
         printf("%s",distributeur[num-1]);
     }
