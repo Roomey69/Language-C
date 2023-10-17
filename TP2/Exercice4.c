@@ -61,7 +61,7 @@ void exo14(){
 
 int main(){
 
-    exo12();
+
     
     return 0;
 }
