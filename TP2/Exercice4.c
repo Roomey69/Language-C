@@ -25,12 +25,11 @@ void exo11(){
 
 void exo12(){
 
-    int nb,p=1;
+    int nb;
 
     printf("Entrez un nombre entier : ");scanf("%d",&nb);
-    for( int i=0 ; i<nb ; i++ ){
-        printf("%d\n",p);
-        p+=2;
+    for( int i=1 ; i<2*nb ; i+=2 ){
+        printf("%d\n",i);
     }
     
 }
@@ -41,7 +40,7 @@ void exo13(){
     int nb,i=1;
 
     printf("Entrez un nombre entier : ");scanf("%d",&nb);
-    while(  i <= nb ){
+    while( i <= nb ){
         printf("%d\n",i);
         i+=2;
     }
@@ -62,7 +61,7 @@ void exo14(){
 
 int main(){
 
+    exo12();
     
-
     return 0;
 }
