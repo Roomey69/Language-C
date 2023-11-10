@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <D:\ING1\Language C\TP4\getmax.h>
+#include "getmax.h"
 
 // FONCTIONNEL
 
@@ -40,7 +40,7 @@ char multiple3(int nb){
 
 float average3(int a, int b, int c){
     if ( a,b,c >= 0 && a,b,c <=20 ){
-        return (a+b+c)/3;
+        return (float)(a+b+c)/3.0f;
     }else{
         return -1;
     }
@@ -103,7 +103,7 @@ int main(){
     //printf("%d\n",getMax(x = input("Entrez le 2eme entier : "), y = input("Entrez le 1er entier : ")));
     //printf("%f %f\n",calculAire(4,2),calculPerimetre(4,2));
     //printf("%s",multiple3(input("Entrez votre nombre : ")));
-    //printf("%f",average3(12,13,14));
+    //printf("%0.2f",average3(12,13,15));
     //printf("Il y a un total de %d eleves.",nb_eleves());
     //multiple73();
     //printf("%s",etage());

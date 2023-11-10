@@ -9,6 +9,7 @@ int main(){
     char student[4];
 
     printf("Entrez votre age : "); scanf("%d",&age);
+
     if ( age > 17 && age < 27){
         printf("Etes vous etudiant, oui ou non ? "); scanf("%s",&student);
         if(strcmp(student,"oui") == 0){

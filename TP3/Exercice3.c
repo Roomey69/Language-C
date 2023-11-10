@@ -7,6 +7,7 @@ int main(){
     int nb;
 
     printf("Entrez un entier : "); scanf("%d",&nb);
+    
     if( nb%3 == 0 ){
         printf("%d est un multiple de 3 ",nb);
     }else{
