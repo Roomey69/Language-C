@@ -108,6 +108,6 @@ int main(){
     //multiple73();
     //printf("%s",etage());
     //printf("La moyenne des nombres est : %f",average());
-    
+     
     return 0;
 }
