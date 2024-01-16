@@ -59,9 +59,9 @@ void affichage(int len_l, int len_c, int** tab)
 
 void init_matrix(int len_l, int len_c, int*** tab)
 {
-    *tab = calloc(len_l, sizeof(int *) * len_l);
+    *tab = calloc(len_l, sizeof(int *));
     for ( int i=0 ; i<len_l ; i++ )
-        (*tab)[i] = calloc(len_c, sizeof(int) * len_c);
+        (*tab)[i] = calloc(len_c, sizeof(int));
 }
 
 int main()
